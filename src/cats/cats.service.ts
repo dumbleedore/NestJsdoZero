@@ -7,6 +7,7 @@ export class CatsService {
     insertCat(name : string,age : number){
         const newCat = new Cats(Date.now().toString(),name,age); 
         this.cats.push(newCat);
+        return newCat;
     }
     findAllCats(){
         return this.cats;

@@ -12,7 +12,8 @@ findCats(){
 }
 @Post('addCat') // ADD CAT
 insertCat(@Body('name')name : string,@Body('age')age : number ){
-    return this.catsService.insertCat(name,age);
+    const cat =  this.catsService.insertCat(name,age);
+    return {NewCat:cat};
 }
 @Delete('removecat') // REMOVE CAT
 removeCat(@Body('id')id : string){
